@@ -1,29 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 import Header from './components/header/Header';
+import './App.css';
+import FeaturedDrinks from './components/featured_drinks/FeaturedDrinks';
+import Footer from './components/footer/Footer';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-
-      <Header></Header>
-      <h1>Hello</h1>
-      <main className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <Header />
+      <main className="main">
+        <h1>Welcome to Coffee Lovers!</h1>
+        <p>Discover the world of delicious coffee drinks.</p>
+        <FeaturedDrinks />
       </main>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,21 +1,18 @@
-import styles from './Header.module.scss';
+import React from 'react';
+import style from './Header.module.scss';
 
 const Header = () => {
-    return (
-        <div>
-            <header className={styles.header}>
-                <h1>
-                    create app
-                </h1>
-                <p>description</p>
-            </header>
-            <nav className={styles.nav}>
-                <a href="#">One</a>
-                <a href="#">Two</a>
-                <a href="#">Three</a>
-            </nav>
-        </div> 
-    );
-}
+  return (
+    <header className = {style.header}>
+      <nav className = {style.nav}>
+        <ul className = {style.navList}>
+          <li className = {style.navItem}><a href="#home">Home</a></li>
+          <li className = {style.navItem}><a href="#about">About</a></li>
+          <li className = {style.navItem}><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
 
 export default Header;

@@ -1,6 +1,13 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
+
+.main {
+  min-height: 85vh;
+  padding: 2rem;
+}
+
 
 .App-logo {
   height: 40vmin;
