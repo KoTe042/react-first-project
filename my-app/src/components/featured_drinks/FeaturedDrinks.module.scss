@@ -1,6 +1,7 @@
 .featuredDrinks {
     text-align: center;
     padding: 2rem 0;
+    margin-bottom: 4rem;
   }
   
   .drinksList {
@@ -17,7 +18,7 @@
     border: 1px solid #ddd;
     margin: 1rem;
     padding: 1.5rem;
-    width: calc(33.333% - 2rem);
+    width: calc(20% - 2rem);
   }
   
   @media screen and (max-width: 768px) {
