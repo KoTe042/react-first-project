@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './FeaturedDrinks.module.scss';
 
+
 const FeaturedDrinks = () => {
   const drinks = [
     {
@@ -21,6 +22,7 @@ const FeaturedDrinks = () => {
   ];
 
   return (
+    
     <div className={style.featuredDrinks}>
       <h2>Featured Drinks</h2>
       <ul className={style.drinksList}>
