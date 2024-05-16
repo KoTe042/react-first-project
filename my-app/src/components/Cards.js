@@ -1,11 +1,11 @@
 import React from 'react';
-import Card from './Card';
+import MuiCard from './MuiCard';
 
 function Cards({ cards, onToggleFavorite }) {
   return (
     <div className="cards">
       {cards.map(card => (
-        <Card key={card.id} card={card} onToggleFavorite={onToggleFavorite} />
+        <MuiCard key={card.id} card={card} onToggleFavorite={onToggleFavorite} />
       ))}
     </div>
   );
