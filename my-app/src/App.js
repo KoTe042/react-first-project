@@ -12,7 +12,7 @@ function App() {
     if (savedCards) {
       setCards(JSON.parse(savedCards));
     } else {
-      fetch('https://rickandmortyapi.com/api/character')
+      fetch('live_VEiVGiS1bFxVRq3nU37KgDQiOOwFYD8MTN9cRmPOx7EK9yNCrPcG3dvHFJEsp4pV')
         .then(response => response.json())
         .then(data => {
           const formattedCards = data.results.map(card => ({
