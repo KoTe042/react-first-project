@@ -6,13 +6,14 @@ import Cards from './components/Cards';
 function App() {
   const [cards, setCards] = useState([]);
   const [displayCount, setDisplayCount] = useState(10);
+  const apiKey = 'live_VEiVGiS1bFxVRq3nU37KgDQiOOwFYD8MTN9cRmPOx7EK9yNCrPcG3dvHFJEsp4pV';
 
   useEffect(() => {
     const savedCards = localStorage.getItem('cards');
     if (savedCards) {
       setCards(JSON.parse(savedCards));
     } else {
-      fetch('live_VEiVGiS1bFxVRq3nU37KgDQiOOwFYD8MTN9cRmPOx7EK9yNCrPcG3dvHFJEsp4pV')
+      fetch(`https://api.some-service.com/data?api_key=${apiKey}`)
         .then(response => response.json())
         .then(data => {
           const formattedCards = data.results.map(card => ({
