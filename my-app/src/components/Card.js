@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 
-function MuiCard({ card, onToggleFavorite }) {
+function Card({ card, onToggleFavorite }) {
   const [isFavorite, setIsFavorite] = useState(card.isFavorite);
 
   const toggleFavorite = () => {
@@ -15,28 +9,21 @@ function MuiCard({ card, onToggleFavorite }) {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="340"
-        image={card.image}
-        alt={card.name}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {card.name}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {card.species}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small" color="primary" onClick={toggleFavorite}>
-          {isFavorite ? 'Remove from favorite' : 'Add to favorite'}
-        </Button>
-      </CardActions>
-    </Card>
+    <div className={`card ${isFavorite ? 'favorite' : ''}`}>
+      <div className="card_image">
+        <img src={card.image} alt={card.name}></img>
+      </div>
+      <div className="card_content">
+        <div className="card_texts">
+          <h2>{card.name}</h2>
+          <p>{card.species}</p>
+        </div>
+        <div className='add-to-favorite' onClick={toggleFavorite}>
+          {isFavorite ? "Убрать из любимого" : "Любимое"}
+        </div>
+      </div>
+    </div>
   );
 }
 
-export default MuiCard;
+export default Card;

@@ -4,6 +4,7 @@ $main-bg-color: #f2f3f7;
 $text-color: #333;
 $footer-padding: 10px 20px;
 $header-padding: 10px 20px;
+$card-border: 1px solid #ccc;
 $favorite-card-border: 1px solid #ff7777;
 $card-width: 250px;
 *{
@@ -59,6 +60,7 @@ main {
         height: 120px;
 
         button{
+            border-radius: 10px;
             width: 200px;
             height: 50px;
             border: 1px solid;
@@ -66,7 +68,9 @@ main {
     }
 
     .card {
+        border: $card-border;
         width: $card-width;
+        border-radius: 10px;
         overflow: hidden;
         background: #fff;
 
