@@ -19,6 +19,9 @@ function App() {
             id: card.id,
             name: card.name,
             image: card.image,
+            status: card.status,
+            species: card.species,
+            gender: card.gender,
             isFavorite: false
           }));
           setCards(formattedCards);
@@ -58,7 +61,7 @@ function App() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer/>
     </div>
   );
 }

@@ -1,25 +1,35 @@
 import React, { useState } from 'react';
 
 function Card({ card, onToggleFavorite }) {
-  const [isFavorite, setIsFavorite] = useState(card.isFavorite);
+  const [infoTexts, setInfoTexts] = useState([]);
 
   const toggleFavorite = () => {
-    setIsFavorite(!isFavorite);
     onToggleFavorite(card.id);
   };
 
+  const handleCardClick = () => {
+    if (infoTexts.length === 0) {
+      const texts = [card.status, card.species, card.gender];
+      setInfoTexts(texts);
+    } else {
+      setInfoTexts([]);
+    }
+  };
+
   return (
-    <div className={`card ${isFavorite ? 'favorite' : ''}`}>
-      <div className="card_image">
+    <div className={`card ${card.isFavorite ? 'favorite' : ''}`}>
+      <div className="card_image" onClick={handleCardClick}>
         <img src={card.image} alt={card.name}></img>
       </div>
       <div className="card_content">
         <div className="card_texts">
           <h2>{card.name}</h2>
-          <p>{card.species}</p>
+          {infoTexts.map((text, index) => (
+            <p key={index}>{text}</p>
+          ))}
         </div>
         <div className='add-to-favorite' onClick={toggleFavorite}>
-          {isFavorite ? "Убрать из любимого" : "Любимое"}
+          {card.isFavorite ? "Убрать" : "Добавить"}
         </div>
       </div>
     </div>

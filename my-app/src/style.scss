@@ -1,119 +1,110 @@
-// Определение переменных
-$bg-color: #fff;
-$main-bg-color: #f2f3f7;
-$text-color: #333;
-$footer-padding: 10px 20px;
-$header-padding: 10px 20px;
-$card-border: 1px solid #ccc;
-$favorite-card-border: 1px solid #ff7777;
-$card-width: 250px;
-*{
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$background-color: #f8f9fa;
+$white: #fff;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body,
-h1,
-h2,
-p {
-    margin: 0;
-    padding: 0;
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $background-color;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 header {
-    background-color: $bg-color;
-    padding: $header-padding;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
+  color: black;
+  padding: 20px;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+  }
 }
 
 footer {
-    background-color: $bg-color;
-    padding: $footer-padding;
-    text-align: center;
-    color: $text-color;
-    width: 100%;
+  color: black;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
 }
 
-main {
-    padding-top: 75px;
-    background-color: $main-bg-color;
-    min-height: calc(100vh - 38px);
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-    .wrapper{
-        width: 90%;
-        margin: 0 auto;
+.card {
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &.favorite {
+    border: 3px solid red;
+  }
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .card_content {
+    padding: 10px;
+
+    .card_texts {
+      margin-bottom: 10px;
+
+      h2 {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-size: 14px;
+        color: $secondary-color;
+      }
     }
 
-    .cards{
-        display: flex;
-        gap: 10px;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
+    .add-to-favorite {
+      cursor: pointer;
+      color: $primary-color;
+      font-weight: bold;
+      text-align: center;
     }
+  }
+}
 
-    .moreButton{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        height: 120px;
+.moreButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 
-        button{
-            border-radius: 10px;
-            width: 200px;
-            height: 50px;
-            border: 1px solid;
-        }
+  button {
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 14px;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
     }
-
-    .card {
-        border: $card-border;
-        width: $card-width;
-        border-radius: 10px;
-        overflow: hidden;
-        background: #fff;
-
-        .card_image{
-            width: 100%;
-            height: 120px;
-
-            & img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .card_content{
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            height: calc(100% - 120px);
-            justify-content: space-between;
-        }
-
-         &.favorite {
-            border: $favorite-card-border;
-        }
-
-        .add-to-favorite {
-            cursor: pointer;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f77;
-            color: #fff;
-            font-weight: 800;
-            width: 100%;
-        }
-
-        &.favorite .add-to-favorite {
-            background: #ffdd36;
-            color: #2a2727;
-        }
-    }
+  }
 }
