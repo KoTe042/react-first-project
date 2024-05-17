@@ -1,5 +1,5 @@
 import React from 'react';
-import MuiCard from './MuiCard';
+import MuiCard from './MuiCard'; // Обновленная строка
 
 function Cards({ cards, onToggleFavorite }) {
   return (
